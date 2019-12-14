@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- master
+- none
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -23,7 +23,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(build.artifactstagingdirectory)'
-    Contents: '**/*.war'
+    Contents: '**/*.jar'
     TargetFolder: '$(system.defaultworkingdirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
