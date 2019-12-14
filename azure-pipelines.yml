@@ -22,9 +22,9 @@ steps:
     goals: 'package'
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(build.artifactstagingdirectory)'
+    SourceFolder: '$(system.defaultworkingdirectory)'
     Contents: '**/*.war'
-    TargetFolder: '$(system.defaultworkingdirectory)'
+    TargetFolder: '$(build.artifactstagingdirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
